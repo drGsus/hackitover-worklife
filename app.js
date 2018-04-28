@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var activities = require('./routes/activities');
 var auth = require('./routes/auth');
 var api = require ("./routes/api.route");
 var bluebird = require('bluebird');
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/user', users);
+app.use('/activity', activities);
 app.use('/auth', auth);
 app.use('/api', api);
 

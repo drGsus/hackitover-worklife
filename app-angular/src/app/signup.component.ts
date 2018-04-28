@@ -5,34 +5,7 @@ import { AuthServive } from "./services/auth.service";
 
 @Component({
   selector: 'app-signup',
-  template: `
-    <div class="container">
-        <h1>Signup Form</h1>
-        <form #signupForm="ngForm">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" required [(ngModel)]="user.name" name="name">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
-        </div>
-
-        <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{chosenOption}}</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button *ngFor="let option of options" (click)="onSelect(option)" class="dropdown-item">{{option}}</button>
-        </div>
-        </div>
-
-        <button type="submit" class="btn btn-success" [disabled]="!signupForm.form.valid" (click)="onSubmit()">Submit</button>
-        </form>
-    </div>  
-    `,
+  templateUrl: './signup.component.html',
     styles: [`
     button{
         cursor: pointer;

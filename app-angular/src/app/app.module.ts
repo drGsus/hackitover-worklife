@@ -15,6 +15,8 @@ import { SignInComponent } from './signin.component';
 import { Router } from '@angular/router'; 
 import { UserService } from './services/user.service';
 import { AdminPanelComponent } from './admin.panel';
+import { ActivityComponent } from './activity/activity.component';
+import { ActivityService } from './services/activity.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AdminPanelComponent } from './admin.panel';
     TemplateViewComponent,
     SignupComponent,
     SignInComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { AdminPanelComponent } from './admin.panel';
   providers: [
     TemplateService,
     AuthServive,
-    UserService
+    UserService,
+    ActivityService
   ],
   bootstrap: [AppComponent]
 })
