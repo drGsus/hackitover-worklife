@@ -4,6 +4,8 @@ var User = require("../models/user.model");
 _this=this;
 
 exports.getTemplates = async function(req, res, next){
+    console.log("BROSEPH");
+
     var page = req.query.page ? req.query.page : 1;
     var limit = req.query.limit ? req.query.limit : 10;
     

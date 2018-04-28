@@ -14,6 +14,14 @@ export class ActivityService {
         private http: HttpClient 
     ){}
 
+    getActivities() : Observable<any>{
+        return this.http.get(this.activity_url).map(res => {
+            console.log("Activity Service");
+            console.log(res);
+            return res["obj"] as Activity[];
+        })
+    }
+
     newActivity(activity:Activity) : Observable<any>{
         return this.http.post(`${this.activity_url}`, activity);
     }

@@ -8,16 +8,19 @@ import { ActivityService } from "../services/activity.service";
   templateUrl: './activity.component.html'
 })
 export class ActivityComponent implements OnInit {
-    activity:Activity = new Activity();
+    activity : Activity = new Activity();
+    activities : Activity[];
 
     constructor(private activityService:ActivityService){}
 
     ngOnInit(){
+        this.activityService.getActivities().subscribe(
+            data => this.activities = data
+        )
     }
 
     onSubmit()
     {
-        console.log("ON SUBMIT");
         this.activityService.newActivity(this.activity).subscribe(
             data => console.log(data),
             error => console.error(error)
