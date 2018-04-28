@@ -1,0 +1,4 @@
+WINDOWS
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod" --dbpath "C:\Users\storcanin\Projects\hackitover-worklife\db\data"
+
+mongodpath --dbpath dataPath in Respository
